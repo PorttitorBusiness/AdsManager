@@ -101,26 +101,29 @@ let platforms = [
 
 function createPlatformElement(platform, index) {
     const container = document.createElement('div');
-    container.className = 'platform';
+    container.className = 'mdl-card mdl-shadow--2dp platform';
     container.innerHTML = `
-        <label>Name</label>
-        <input type="text" value="${platform.name}" oninput="updatePlatform(${index}, 'name', this.value)">
-        <label>Description</label>
-        <input type="text" value="${platform.description}" oninput="updatePlatform(${index}, 'description', this.value)">
-        <label>API Link</label>
-        <input type="text" value="${platform.api_link}" oninput="updatePlatform(${index}, 'api_link', this.value)">
-        <label>Documentation Link</label>
-        <input type="text" value="${platform.documentation_link}" oninput="updatePlatform(${index}, 'documentation_link', this.value)">
-        <label>Client ID</label>
-        <input type="text" value="${platform.access.client_id}" oninput="updateAccess(${index}, 'client_id', this.value)">
-        <label>Client Secret</label>
-        <input type="text" value="${platform.access.client_secret}" oninput="updateAccess(${index}, 'client_secret', this.value)">
-        <label>Refresh Token</label>
-        <input type="text" value="${platform.access.refresh_token}" oninput="updateAccess(${index}, 'refresh_token', this.value)">
-        <label>Developer Token</label>
-        <input type="text" value="${platform.access.developer_token}" oninput="updateAccess(${index}, 'developer_token', this.value)">
-        <label>Bearer Token</label>
-        <input type="text" value="${platform.access.bearer_token}" oninput="updateAccess(${index}, 'bearer_token', this.value)">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">${platform.name}</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            <label>Description</label>
+            <input type="text" class="mdl-textfield__input" value="${platform.description}" oninput="updatePlatform(${index}, 'description', this.value)">
+            <label>API Link</label>
+            <input type="text" class="mdl-textfield__input" value="${platform.api_link}" oninput="updatePlatform(${index}, 'api_link', this.value)">
+            <label>Documentation Link</label>
+            <input type="text" class="mdl-textfield__input" value="${platform.documentation_link}" oninput="updatePlatform(${index}, 'documentation_link', this.value)">
+            <label>Client ID</label>
+            <input type="text" class="mdl-textfield__input" value="${platform.access.client_id}" oninput="updateAccess(${index}, 'client_id', this.value)">
+            <label>Client Secret</label>
+            <input type="text" class="mdl-textfield__input" value="${platform.access.client_secret}" oninput="updateAccess(${index}, 'client_secret', this.value)">
+            <label>Refresh Token</label>
+            <input type="text" class="mdl-textfield__input" value="${platform.access.refresh_token}" oninput="updateAccess(${index}, 'refresh_token', this.value)">
+            <label>Developer Token</label>
+            <input type="text" class="mdl-textfield__input" value="${platform.access.developer_token}" oninput="updateAccess(${index}, 'developer_token', this.value)">
+            <label>Bearer Token</label>
+            <input type="text" class="mdl-textfield__input" value="${platform.access.bearer_token}" oninput="updateAccess(${index}, 'bearer_token', this.value)">
+        </div>
     `;
     return container;
 }
